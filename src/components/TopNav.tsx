@@ -16,20 +16,23 @@ import {
     Stack,
     Icon,
     Tooltip,
+    Image,
 } from "@chakra-ui/react";
 // import { Link as NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { BiChevronDown } from "react-icons/bi";
 import { BsCheckCircle } from "react-icons/bs";
 import { MdTimeline } from "react-icons/md";
 import { BsBook } from "react-icons/bs";
 import { FaMoon, FaSun } from "react-icons/fa";
+import logo from "../assets/images/logos/logo.png";
 
 const webLinks = [
+    { name: "Home", to: "/" },
     { name: "About", to: "/about" },
     { name: "Blog", to: "/blog" },
 ];
@@ -56,9 +59,10 @@ export default function TopNav() {
     return (
         <>
             <Box
-                bg={useColorModeValue("white", "gray.700")}
+                // bg={useColorModeValue("white", "gray.700")}
+                bg='gray.900'
                 px={4}
-                // boxShadow={"md"}
+                boxShadow={"lg"}
             >
                 <Flex
                     h={16}
@@ -74,12 +78,15 @@ export default function TopNav() {
                         aria-label={"Open Menu"}
                         display={["inherit", "inherit", "none"]}
                         onClick={isOpen ? onClose : onOpen}
+                        bg={useColorModeValue("white", "gray.700")}
                     />
                     <HStack
                         as={"nav"}
                         spacing={4}
                         display={{ base: "none", md: "flex" }}
+                        sx={{ color: "white" }}
                     >
+                        <Image src={logo} h={85} w={90}></Image>
                         {webLinks.map((link, idx) => (
                             <Link key={idx} to={link.to}>
                                 {link.name}
@@ -87,18 +94,24 @@ export default function TopNav() {
                         ))}
                     </HStack>
                     <Flex alignItems={"center"}>
-                        <IconButton
-                            as={Link}
-                            to={"https://github.com/MA-Ahmad"}
-                            size={"md"}
-                            icon={<FaGithub />}
-                            aria-label={"Github account"}
-                            bg={useColorModeValue("white", "gray.700")}
-                            _hover={{
-                                textDecoration: "none",
-                                bg: useColorModeValue("gray.200", "gray.900"),
-                            }}
-                        />
+                        <Tooltip label='Linkedin'>
+                            <IconButton
+                                as={Link}
+                                to={"https://github.com/MA-Ahmad"}
+                                size={"md"}
+                                icon={<FaLinkedin />}
+                                aria-label={"Github account"}
+                                bg={useColorModeValue("white", "gray.700")}
+                                _hover={{
+                                    textDecoration: "none",
+                                    bg: useColorModeValue(
+                                        "gray.200",
+                                        "gray.900"
+                                    ),
+                                }}
+                            />
+                        </Tooltip>
+
                         {/* <ColorModeSwitcher justifySelf='flex-end' /> */}
                         <Tooltip
                             label={text === "dark" ? "Dark mode" : "Light mode"}
@@ -112,6 +125,7 @@ export default function TopNav() {
                                 marginLeft='2'
                                 icon={<SwitchIcon />}
                                 aria-label={`Switch to ${text} mode`}
+                                bg={useColorModeValue("white", "gray.700")}
                                 _hover={{
                                     bg: useColorModeValue(
                                         "gray.200",
