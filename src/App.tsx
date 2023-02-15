@@ -4,6 +4,7 @@ import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import { theme } from "./styles/theme/theme";
+import Footer from "./components/footer";
 
 export const App = () => (
     <ChakraProvider theme={theme} resetCSS={true}>
@@ -21,5 +22,6 @@ export const App = () => (
                 <Outlet />
             </Box>
         </Box>
+        <Footer />
     </ChakraProvider>
 );

@@ -11,12 +11,12 @@ export const theme = extendTheme({
                 color: "black",
             },
             // styles for the `a`
-            a: {
-                color: "teal.500",
-                _hover: {
-                    textDecoration: "underline",
-                },
-            },
+            // a: {
+            //     color: "white",
+            //     _hover: {
+            //         textDecoration: "underline",
+            //     },
+            // },
             variants: {
                 base: {
                     bg: "yellow.500",
