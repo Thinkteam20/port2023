@@ -18,11 +18,6 @@ import {
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { MotionBox, MotionFlex } from "./motion";
-// import { MotionBox, MotionFlex } from "./motion";
-// import Header from "./header";
-// import Projects from "./projects";
-// import { projectsList } from "data/projects-list";
-// import "style/style.css";
 import UserIcon from "../assets/images/user_icon.png";
 import logoIcon from "../assets/images/logo.png";
 import Card from "./card";
@@ -164,7 +159,7 @@ const Home = () => {
                                     </ListItem>
                                 </UnorderedList>
                             </Stack>
-                            <Achievements />
+
                             <Box>
                                 <Heading as='h2'>What we write about</Heading>
                                 <Text as='p' fontSize='small'>

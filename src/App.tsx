@@ -3,19 +3,7 @@ import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
-// import { theme } from "./style/theme";
-
-const theme = extendTheme({
-    colors: {
-        black: "#000",
-        white: "#fff",
-        gray: {
-            50: "#f7fafc",
-            100: "BlackAlpha 300",
-            900: "#171923",
-        },
-    },
-});
+import { theme } from "./styles/theme/theme";
 
 export const App = () => (
     <ChakraProvider theme={theme} resetCSS={true}>

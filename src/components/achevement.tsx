@@ -1,13 +1,3 @@
-import {
-    List,
-    HStack,
-    ListItem,
-    VStack,
-    Box,
-    Flex,
-    Heading,
-} from "@chakra-ui/react";
-
 const timelineData = [
     {
         id: 1,
@@ -44,42 +34,5 @@ const timelineData = [
 ];
 
 export function Achievements() {
-    return (
-        <List paddingBottom={4}>
-            {(timelineData ?? []).map(({ id, title, description }, index) => {
-                return (
-                    <ListItem
-                        key={id}
-                        zIndex={1}
-                        paddingTop={4}
-                        position='relative'
-                    >
-                        <HStack
-                            width='full'
-                            alignItems='flex-start'
-                            justifyContent='flex-start'
-                        >
-                            <Box
-                                minWidth='14px'
-                                height='14px'
-                                marginTop={1}
-                                borderRadius='full'
-                                bgGradient='linear(to-l, #7928CA, #FF0080)'
-                            />
-
-                            <VStack width='full' spacing={2} textAlign='left'>
-                                <Heading
-                                    width='full'
-                                    size='xs'
-                                    textAlign='left'
-                                >
-                                    {title}
-                                </Heading>
-                            </VStack>
-                        </HStack>
-                    </ListItem>
-                );
-            })}
-        </List>
-    );
+    return <></>;
 }
