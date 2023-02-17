@@ -16,6 +16,8 @@ const iconProps = {
     isRound: true,
 };
 
+// console.log(siteConfig.map((data) => data));
+
 export default function Footer() {
     return (
         <Stack

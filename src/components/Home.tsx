@@ -27,6 +27,7 @@ import img2 from "../assets/images/projects/notch.png";
 import img3 from "../assets/images/projects/souq.png";
 import { getDayOfWeek } from "../utils/getDayOfWeek";
 import { Achievements } from "./achevement";
+import Projects from "./projects";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
@@ -40,7 +41,7 @@ const Home = () => {
     );
     return (
         <>
-            <Box h='100vh' w='full'>
+            <Box h='100%' w='full'>
                 <Flex
                     direction='column'
                     align='center'
@@ -105,7 +106,7 @@ const Home = () => {
                     >
                         <Box mt={10}>
                             <Stack
-                                mb={10}
+                                mb={0}
                                 mx={[0, 0, 10]}
                                 padding={4}
                                 align='start'
@@ -160,16 +161,19 @@ const Home = () => {
                                 </UnorderedList>
                             </Stack>
                         </Box>
+
+                        <Projects />
                     </MotionBox>
                 </Flex>
             </Box>
-            <Box h='100vh' w='full'>
+
+            {/* <Box h='100vh' w='full'>
                 <HStack spacing='50px'>
                     <Card2 imageSrc={img1} />
                     <Card2 imageSrc={img2} />
                     <Card2 imageSrc={img3} />
                 </HStack>
-            </Box>
+            </Box> */}
         </>
     );
 };
