@@ -34,7 +34,8 @@ import logo from "../assets/images/logos/logo.png";
 const webLinks = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about" },
-    { name: "Blog", to: "/blog" },
+    { name: "Resume", to: "/Resume" },
+    { name: "Contact", to: "/Contact" },
 ];
 
 const mobileLinks = [];

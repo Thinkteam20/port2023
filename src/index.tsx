@@ -5,6 +5,9 @@ import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
+import About from "./components/about";
+import Resume from "./components/resume";
+import Contact from "./components/contact";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -15,7 +18,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
         // errorElement: <NotFound />,
-        children: [{ index: true, path: "/", element: <Home /> }],
+        children: [
+            { index: true, path: "/", element: <Home /> },
+            { index: true, path: "/about", element: <About /> },
+            { index: true, path: "/resume", element: <Resume /> },
+            { index: true, path: "/contact", element: <Contact /> },
+        ],
     },
 ]);
 
