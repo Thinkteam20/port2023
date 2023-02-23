@@ -17,9 +17,9 @@ import {
     Icon,
     Tooltip,
     Image,
+    Link,
 } from "@chakra-ui/react";
-// import { Link as NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink as RouterNavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -32,13 +32,20 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import logo from "../assets/images/logos/logo.png";
 
 const webLinks = [
-    { name: "Home", to: "/" },
-    { name: "About", to: "/about" },
-    { name: "Resume", to: "/Resume" },
-    { name: "Contact", to: "/Contact" },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Resume", path: "/Resume" },
+    { name: "Contact", path: "/Contact" },
+    { name: "test", path: "/test" },
 ];
 
-const mobileLinks = [];
+const mobileLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Resume", path: "/Resume" },
+    { name: "Contact", path: "/Contact" },
+    { name: "test", path: "/test" },
+];
 
 interface NavLinkProps {
     index?: string;
@@ -46,6 +53,29 @@ interface NavLinkProps {
     path: string;
     onClose: () => void;
 }
+
+const NavLink = (props: NavLinkProps) => {
+    return (
+        <Link
+            as={RouterNavLink}
+            px={2}
+            py={1}
+            rounded={"md"}
+            _hover={{
+                textDecoration: "none",
+                color: "black",
+                bg: useColorModeValue("gray.200", "gray.900"),
+            }}
+            _activeLink={{
+                color: useColorModeValue("#53c8c4", "#53c8c4"),
+            }}
+            onClick={() => props.onClose()}
+            to={props.path}
+        >
+            {props.name}
+        </Link>
+    );
+};
 
 export default function TopNav() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,7 +91,7 @@ export default function TopNav() {
         <>
             <Box
                 // bg={useColorModeValue("white", "gray.700")}
-                bg='gray.900'
+                bg='black'
                 px={4}
                 boxShadow={"lg"}
             >
@@ -88,10 +118,13 @@ export default function TopNav() {
                         sx={{ color: "white" }}
                     >
                         <Image src={logo} h={85} w={90}></Image>
-                        {webLinks.map((link, idx) => (
-                            <Link key={idx} to={link.to}>
-                                {link.name}
-                            </Link>
+                        {webLinks.map((link, index) => (
+                            <NavLink
+                                key={index}
+                                name={link.name}
+                                path={link.path}
+                                onClose={onClose}
+                            />
                         ))}
                     </HStack>
                     <Flex alignItems={"center"}>
@@ -137,6 +170,25 @@ export default function TopNav() {
                         </Tooltip>
                     </Flex>
                 </Flex>
+                {isOpen ? (
+                    <Box
+                        pb={4}
+                        w={["100%", "100%", "80%"]}
+                        maxW={800}
+                        display={["inherit", "inherit", "none"]}
+                        color='white'
+                    >
+                        <Stack as={"nav"} spacing={4}>
+                            {mobileLinks.map((link, index) => (
+                                <NavLink
+                                    name={link.name}
+                                    path={link.path}
+                                    onClose={onClose}
+                                />
+                            ))}
+                        </Stack>
+                    </Box>
+                ) : null}
             </Box>
         </>
     );

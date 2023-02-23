@@ -10,19 +10,22 @@ import {
     Flex,
     FormErrorMessage,
     useToast,
+    Text,
 } from "@chakra-ui/react";
 
 interface FormValues {
     name: string;
+    phone: number;
     address: string;
     message: string;
     dropbox: string;
     file?: File;
 }
-
+// testing
 const MyForm = () => {
     const [formValues, setFormValues] = useState<FormValues>({
         name: "",
+        phone: 0,
         address: "",
         message: "",
         dropbox: "",
@@ -63,6 +66,7 @@ const MyForm = () => {
         });
         setFormValues({
             name: "",
+            phone: 0,
             address: "",
             message: "",
             dropbox: "",
@@ -71,12 +75,27 @@ const MyForm = () => {
 
     return (
         <Box>
+            <Text>CONTACTS</Text>
             <form onSubmit={handleSubmit}>
                 <FormControl id='name' isRequired mt={5}>
                     <FormLabel>Name</FormLabel>
                     <Input
                         type='text'
                         value={formValues.name}
+                        onChange={(e) =>
+                            setFormValues((prevValues) => ({
+                                ...prevValues,
+                                name: e.target.value,
+                            }))
+                        }
+                    />
+                </FormControl>
+
+                <FormControl id='phone' isRequired mt={5}>
+                    <FormLabel>Contact Number</FormLabel>
+                    <Input
+                        type='text'
+                        value={formValues.phone}
                         onChange={(e) =>
                             setFormValues((prevValues) => ({
                                 ...prevValues,

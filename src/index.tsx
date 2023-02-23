@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import About from "./components/about";
 import Resume from "./components/resume";
 import Contact from "./components/contact";
+import Test from "./components/test";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
             { index: true, path: "/about", element: <About /> },
             { index: true, path: "/resume", element: <Resume /> },
             { index: true, path: "/contact", element: <Contact /> },
+            { index: true, path: "/test", element: <Test /> },
         ],
     },
 ]);
