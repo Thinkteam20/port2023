@@ -6,6 +6,7 @@
         "@chakra-ui/react": "^2.4.9",
         "@emotion/react": "^11.0.0",
         "@emotion/styled": "^11.0.0",
+        "@laurabeatris/chakra-ui-flashless": "^0.2.11",
         "@react-pdf-viewer/core": "^3.11.0",
         "@react-pdf-viewer/default-layout": "^3.11.0",
         "@testing-library/jest-dom": "^5.16.4",

@@ -6,6 +6,7 @@ import {
     Image,
     Kbd,
     Box,
+    Flex,
 } from "@chakra-ui/react";
 import { MotionBox, MotionFlex } from "./motion";
 import img1 from "../assets/images/about/prog.png";
@@ -42,7 +43,15 @@ export default function About() {
                 <VStack width='full' spacing={5} alignItems='flex-start'>
                     <Heading as='h2'>💁🏻 I am...</Heading>
                     <Stack direction='column' spacing={4}>
-                        <Text textAlign='left'>
+                        <Text
+                            textAlign='left'
+                            fontSize={{
+                                base: "12px",
+                                sm: "14px",
+                                md: "18px",
+                                lg: "24px",
+                            }}
+                        >
                             Highly-motivated developer equipped with great
                             coding, debugging and project management abilities.
                             Accomplishes project goals consistently with
@@ -65,15 +74,53 @@ export default function About() {
                         </Stack>
                     </Stack>
 
-                    <Text textAlign='left'>
+                    <Text
+                        textAlign='left'
+                        fontSize={{
+                            base: "12px",
+                            sm: "14px",
+                            md: "18px",
+                            lg: "24px",
+                        }}
+                    >
                         I have been struggling to find a right learning
                         mechanism that I could consistently apply throughout the
                         years since our field is always changing with new
                         technologies, patterns, new libraries, etc ⁠
                     </Text>
-                    <Text textAlign='left'>
-                        Now i have own methodology to learn and apply
-                        <Stack direction='row' h='100%' p={4}>
+
+                    <Flex
+                        direction={{ base: "column", md: "row" }}
+                        _light={{ bg: "brand.500" }}
+                        py={0}
+                        mx='auto'
+                    >
+                        <Box>
+                            <Text
+                                textAlign='left'
+                                fontSize={{
+                                    base: "14px",
+                                    sm: "14px",
+                                    md: "16px",
+                                    lg: "22px",
+                                }}
+                                color='gray.500'
+                            >
+                                Now i have own methodology to learn and apply
+                            </Text>
+                        </Box>
+
+                        <Stack
+                            direction={{ base: "row" }}
+                            h='100%'
+                            p={4}
+                            fontSize={{
+                                base: "10px",
+                                lg: "20px",
+                                md: "16px",
+                                sm: "12px",
+                            }}
+                        >
                             <Kbd>READ & LEARN</Kbd>{" "}
                             <MdOutlineDoubleArrow color='#53c8c4' />
                             <Kbd>Create</Kbd>
@@ -82,7 +129,7 @@ export default function About() {
                             <MdOutlineDoubleArrow color='#53c8c4' />
                             <Kbd>Deploy</Kbd>
                         </Stack>
-                    </Text>
+                    </Flex>
                 </VStack>
             </VStack>
         </MotionBox>

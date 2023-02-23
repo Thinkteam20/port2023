@@ -13,7 +13,7 @@ export const App = () => (
             textAlign='center'
             fontSize='xl'
             w={["90%", "85%", "80%"]}
-            maxW={850}
+            maxW={900}
             mx='auto'
             bg='white'
             style={{ backgroundSize: "1200% 1200%" }}

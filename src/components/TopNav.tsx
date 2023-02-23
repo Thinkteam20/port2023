@@ -36,7 +36,6 @@ const webLinks = [
     { name: "About", path: "/about" },
     { name: "Resume", path: "/Resume" },
     { name: "Contact", path: "/Contact" },
-    { name: "test", path: "/test" },
 ];
 
 const mobileLinks = [
@@ -44,7 +43,6 @@ const mobileLinks = [
     { name: "About", path: "/about" },
     { name: "Resume", path: "/Resume" },
     { name: "Contact", path: "/Contact" },
-    { name: "test", path: "/test" },
 ];
 
 interface NavLinkProps {

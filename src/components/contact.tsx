@@ -15,7 +15,7 @@ import {
 
 interface FormValues {
     name: string;
-    phone: number;
+    phone: string;
     address: string;
     message: string;
     dropbox: string;
@@ -25,7 +25,7 @@ interface FormValues {
 const MyForm = () => {
     const [formValues, setFormValues] = useState<FormValues>({
         name: "",
-        phone: 0,
+        phone: "",
         address: "",
         message: "",
         dropbox: "",
@@ -63,10 +63,11 @@ const MyForm = () => {
             isClosable: true,
             position: "top-right",
             variant: "solid",
+            colorScheme: "blue.100",
         });
         setFormValues({
             name: "",
-            phone: 0,
+            phone: "",
             address: "",
             message: "",
             dropbox: "",
@@ -95,11 +96,10 @@ const MyForm = () => {
                     <FormLabel>Contact Number</FormLabel>
                     <Input
                         type='text'
-                        value={formValues.phone}
                         onChange={(e) =>
                             setFormValues((prevValues) => ({
                                 ...prevValues,
-                                name: e.target.value,
+                                phone: e.target.value,
                             }))
                         }
                     />

@@ -114,10 +114,6 @@ const Home = () => {
                                 borderColor={"#53c8c4"}
                                 color={"whatsapp"}
                                 _hover={{ shadow: "lg" }}
-                                // backgroundColor={useColorModeValue(
-                                //     "gray.100",
-                                //     "#1e2533"
-                                // )}
                                 backgroundColor='gray.900'
                                 rounded='sm'
                                 fontSize='md'
@@ -136,27 +132,37 @@ const Home = () => {
                                     color='white'
                                 >
                                     <ListItem>
-                                        <Link as={NavLink} to='/open-source'>
-                                            Live/Local Github Repos
-                                            <Badge ml='1' colorScheme='green'>
-                                                New
-                                            </Badge>
-                                        </Link>
+                                        {/* <Link as={NavLink} to='/open-source'> */}
+                                        Vanilla JavaScript / DOM / Libraries -
+                                        REACT.JS REACT NATIVE
+                                        <Badge ml='1' colorScheme='red'>
+                                            STRONG
+                                        </Badge>
+                                        {/* </Link> */}
                                     </ListItem>
                                     <ListItem>
-                                        <Link as={NavLink} to='/story-timeline'>
-                                            Story page
-                                        </Link>
+                                        {/* <Link as={NavLink} to='/story-timeline'> */}
+                                        Dotnet core Framework / MVC pattern - C#
+                                        {/* </Link> */}
                                     </ListItem>
                                     <ListItem>
-                                        <Link as={NavLink} to='/tech-stack'>
-                                            Tech Stack
-                                        </Link>
+                                        {/* <Link as={NavLink} to='/tech-stack'> */}
+                                        Building business logic API
+                                        {/* </Link> */}
                                     </ListItem>
                                     <ListItem>
-                                        <Link as={NavLink} to='/achievements'>
-                                            Achievements
-                                        </Link>
+                                        {/* <Link
+                                            as={NavLink}
+                                            to='/achievements'
+                                        ></Link> */}
+                                        Duplicating Figma | Adobe design
+                                    </ListItem>
+                                    <ListItem>
+                                        {/* <Link
+                                            as={NavLink}
+                                            to='/achievements'
+                                        ></Link> */}
+                                        MySQL | MongoDb
                                     </ListItem>
                                 </UnorderedList>
                             </Stack>
@@ -166,14 +172,6 @@ const Home = () => {
                     </MotionBox>
                 </Flex>
             </Box>
-
-            {/* <Box h='100vh' w='full'>
-                <HStack spacing='50px'>
-                    <Card2 imageSrc={img1} />
-                    <Card2 imageSrc={img2} />
-                    <Card2 imageSrc={img3} />
-                </HStack>
-            </Box> */}
         </>
     );
 };

@@ -8,12 +8,7 @@ export const projects = [
         name: "One Dream Community",
         description:
             "Hellonext is a feature voting software where you can allow your users to vote on features, publish roadmap, and complete your customer feedback loop",
-        stack: [
-            { icon: <SiDotnet /> },
-            { icon: <FaReact /> },
-            { icon: <SiJquery /> },
-            { icon: <FaBitbucket /> },
-        ],
+        stack: ["SiDotnet", "FaReact", "SiJquery", "FaBitbucket"],
         img: "https://res.cloudinary.com/dlnh85cl7/image/upload/v1676592964/portfolio/odc-min_twexrv.jpg",
         fontColor: "#87BD42",
     },

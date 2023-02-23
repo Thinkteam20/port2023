@@ -27,13 +27,18 @@ export default function Resume() {
         setPageNumber(1);
     }
     return (
-        <div style={{ height: "100vh" }}>
-            <iframe
-                src={`${pdf}#view=fitH`}
+        <Box
+            style={{
+                height: "100vh",
+            }}
+        >
+            <embed
+                src={`${pdf}#view=fitH#view=fitW`}
                 title='testPdf'
                 height='100%'
                 width='100%'
+                frameBorder='0'
             />
-        </div>
+        </Box>
     );
 }
