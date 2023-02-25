@@ -28,6 +28,7 @@ import img3 from "../assets/images/projects/souq.png";
 import { getDayOfWeek } from "../utils/getDayOfWeek";
 import { Achievements } from "./achevement";
 import Projects from "./projects";
+import { AnimateSharedLayout } from "framer-motion";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
@@ -104,68 +105,82 @@ const Home = () => {
                             },
                         }}
                     >
-                        <Box mt={10}>
-                            <Stack
-                                mb={0}
-                                mx={[0, 0, 10]}
-                                padding={4}
-                                align='start'
-                                borderLeft='4px solid'
-                                borderColor={"#53c8c4"}
-                                color={"whatsapp"}
-                                _hover={{ shadow: "lg" }}
-                                backgroundColor='gray.900'
-                                rounded='sm'
-                                fontSize='md'
-                            >
-                                <Text
-                                    textAlign='center'
-                                    color='#53c8c4'
-                                    fontWeight='bold'
+                        <Box mt={10} backgroundColor='transparent'>
+                            <AnimateSharedLayout>
+                                <MotionBox
+                                    whileHover={{ y: -0 }}
+                                    transition={{
+                                        duration: 0.35,
+                                        ease: "easeIn",
+                                    }}
                                 >
-                                    SKILLS
-                                </Text>
-                                <UnorderedList
-                                    textAlign='left'
-                                    paddingLeft={5}
-                                    m={0}
-                                    color='white'
-                                >
-                                    <ListItem>
-                                        {/* <Link as={NavLink} to='/open-source'> */}
-                                        Vanilla JavaScript / DOM / Libraries -
-                                        REACT.JS REACT NATIVE
-                                        <Badge ml='1' colorScheme='red'>
-                                            STRONG
-                                        </Badge>
-                                        {/* </Link> */}
-                                    </ListItem>
-                                    <ListItem>
-                                        {/* <Link as={NavLink} to='/story-timeline'> */}
-                                        Dotnet core Framework / MVC pattern - C#
-                                        {/* </Link> */}
-                                    </ListItem>
-                                    <ListItem>
-                                        {/* <Link as={NavLink} to='/tech-stack'> */}
-                                        Building business logic API
-                                        {/* </Link> */}
-                                    </ListItem>
-                                    <ListItem>
-                                        {/* <Link
+                                    <Stack
+                                        mb={0}
+                                        mx={[0, 0, 10]}
+                                        padding={4}
+                                        align='start'
+                                        borderLeft='4px solid'
+                                        borderColor={"#53c8c4"}
+                                        color={"whatsapp"}
+                                        _hover={{
+                                            shadow: "lg",
+                                        }}
+                                        backgroundColor='gray.900'
+                                        rounded='sm'
+                                        fontSize='md'
+                                    >
+                                        <Text
+                                            textAlign='center'
+                                            color='#53c8c4'
+                                            fontWeight='bold'
+                                        >
+                                            SKILLS
+                                        </Text>
+                                        <UnorderedList
+                                            textAlign='left'
+                                            paddingLeft={5}
+                                            m={0}
+                                            color='white'
+                                        >
+                                            <ListItem>
+                                                {/* <Link as={NavLink} to='/open-source'> */}
+                                                Vanilla JavaScript / DOM /
+                                                Libraries - REACT.JS REACT
+                                                NATIVE
+                                                <Badge ml='1' colorScheme='red'>
+                                                    STRONG
+                                                </Badge>
+                                                {/* </Link> */}
+                                            </ListItem>
+                                            <ListItem>
+                                                {/* <Link as={NavLink} to='/story-timeline'> */}
+                                                Dotnet core Framework / MVC
+                                                pattern - C#
+                                                {/* </Link> */}
+                                            </ListItem>
+                                            <ListItem>
+                                                {/* <Link as={NavLink} to='/tech-stack'> */}
+                                                Building business logic API
+                                                {/* </Link> */}
+                                            </ListItem>
+                                            <ListItem>
+                                                {/* <Link
                                             as={NavLink}
                                             to='/achievements'
                                         ></Link> */}
-                                        Duplicating Figma | Adobe design
-                                    </ListItem>
-                                    <ListItem>
-                                        {/* <Link
+                                                Duplicating Figma | Adobe design
+                                            </ListItem>
+                                            <ListItem>
+                                                {/* <Link
                                             as={NavLink}
                                             to='/achievements'
                                         ></Link> */}
-                                        MySQL | MongoDb
-                                    </ListItem>
-                                </UnorderedList>
-                            </Stack>
+                                                MySQL | MongoDb
+                                            </ListItem>
+                                        </UnorderedList>
+                                    </Stack>
+                                </MotionBox>
+                            </AnimateSharedLayout>
                         </Box>
 
                         <Projects />
